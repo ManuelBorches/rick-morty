@@ -19,6 +19,18 @@ const Pagination = ({ totalPages }) => {
     setWidth(window.innerWidth);
   };
 
+  const handleMarginPages = () => {
+    if (width < 412) return 1;
+    if (width < 992) return 2;
+    return 4;
+  };
+
+  const handlePageRange = () => {
+    if (width < 412) return 0;
+    if (width < 992) return 2;
+    return 3;
+  };
+
   return (
     <ReactPaginate
       className="pagination"
@@ -32,8 +44,8 @@ const Pagination = ({ totalPages }) => {
       activeClassName="active"
       forcePage={page - 1}
       onPageChange={handlePageChange}
-      marginPagesDisplayed={width < 576 ? 2 : 4}
-      pageRangeDisplayed={width < 576 ? 1 : 2}
+      marginPagesDisplayed={handleMarginPages()}
+      pageRangeDisplayed={handlePageRange()}
     />
   );
 };
