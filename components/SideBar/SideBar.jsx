@@ -9,7 +9,7 @@ import AccordionFilter from "./AccordionFilter";
 const SideBar = () => {
   const { statusFilter, genderFilter } = useSelector((state) => state.filters);
   return (
-    <div className="bg-light rounded p-3">
+    <div className="bg-light rounded p-3 shadow">
       <SearchBar />
 
       <AccordionFilter

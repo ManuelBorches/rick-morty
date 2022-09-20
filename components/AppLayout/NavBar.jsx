@@ -16,7 +16,7 @@ const NavBar = () => {
   const toggleMenu = () => dispatch(setIsMenuVisible(!isMenuVisible));
 
   return (
-    <nav className="navbar sticky-top navbar-light bg-dark">
+    <nav className="navbar sticky-top navbar-light bg-dark shadow-lg">
       <div className="row container-fluid">
         <div className="col">
           {(pathname !== "/" && (

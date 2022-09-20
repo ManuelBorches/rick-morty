@@ -5,7 +5,7 @@ const CharacterCard = ({ character }) => {
   const { id, name, image, species, status } = character;
 
   return (
-    <div className="card h-100 text-dark">
+    <div className="card h-100 text-dark shadow">
       <Image
         className="card-img-top"
         src={image}
