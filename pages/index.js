@@ -1,33 +1,49 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setIsMenuVisible } from "../src/features/menu/menuSlice";
 import CharacterList from "../components/CharacterList/CharacterList";
 import ScrollTopButton from "../components/ScrollTopButton";
 import SideBar from "../components/SideBar/SideBar";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const isMenuVisible = useSelector((state) => state.menu.isMenuVisible);
+
+  useEffect(() => {
+    const updateDimensions = () =>
+      (window.innerWidth >= 768 && dispatch(setIsMenuVisible(true))) ||
+      dispatch(setIsMenuVisible(false));
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, [dispatch]);
+
   return (
-    <>
-      <div className="container position-relative">
-        <div className="row">
-          {/* <div className="col-4 d-none d-md-block">
-            <SideBar />
-          </div> */}
-
-          <div
-            className={`col-4 ${
-              !isMenuVisible ? "d-none" : ""
-            } position-sm-absolute`}
-          >
-            <SideBar />
-          </div>
-
-          <div className="col-12 col-md-8">
-            <CharacterList />
-          </div>
+    <div className="container position-relative">
+      <div className="row">
+        <div className={`col-md-4 menu ${!isMenuVisible ? "d-none" : ""}`}>
+          <SideBar />
         </div>
-        <ScrollTopButton />
+
+        <div className="col-12 col-md-8">
+          <CharacterList />
+        </div>
       </div>
-    </>
+
+      <ScrollTopButton />
+
+      <style jsx>{`
+        @media screen and (max-width: 767px) {
+          .menu {
+            position: fixed;
+            width: 80%;
+            z-index: 5;
+            left: -0.1rem;
+            top: 6rem;
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 
