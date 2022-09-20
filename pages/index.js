@@ -4,12 +4,14 @@ import { setIsMenuVisible } from "../src/features/menu/menuSlice";
 import CharacterList from "../components/CharacterList/CharacterList";
 import ScrollTopButton from "../components/ScrollTopButton";
 import SideBar from "../components/SideBar/SideBar";
+import { setSingleCharacter } from "../src/features/characters/characterSlice";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const isMenuVisible = useSelector((state) => state.menu.isMenuVisible);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setSingleCharacter({}));
     const updateDimensions = () =>
       (window.innerWidth >= 768 && dispatch(setIsMenuVisible(true))) ||
       dispatch(setIsMenuVisible(false));
