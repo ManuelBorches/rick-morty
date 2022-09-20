@@ -21,15 +21,13 @@ const Episodes = () => {
           return (
             <li key={episodeId} className="nav-item" role="presentation">
               <button
-                className={`nav-link ${!index && "active"}`} // "nav-link active" // class=`nav-link ${episode[0] && active}`
+                className={`nav-link ${!index && "active"}`}
                 onClick={handleClick}
-                id={`episode-${episodeId}-tab`} // id={`episode-${episode.id}-tab`}
+                id={`episode-${episodeId}-tab`}
                 data-bs-toggle="tab"
-                // data-bs-target={`#${episodeId}`} // data-bs-target={`#${episodeId}`}
                 type="button"
                 role="tab"
-                // aria-controls={episodeId} // aria-controls={`${episode.number}`}
-                aria-selected={!index && true} // aria-selected={episode[0] && true} // solo al primero
+                aria-selected={!index && true}
               >
                 {`Episode ${episodeId}`}
               </button>

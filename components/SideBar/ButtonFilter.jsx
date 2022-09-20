@@ -1,11 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setPage } from "../../src/features/characters/characterSlice";
 
 const ButtonFilter = ({ items, filteredItems, setFilteredItems }) => {
   const dispatch = useDispatch();
+  const page = useSelector((state) => state.characters.page);
 
   return items.map((item) => {
     const handleFilter = () => {
+      page !== 1 && dispatch(setPage(1));
+
       if (filteredItems.includes(item)) {
         dispatch(
           setFilteredItems(

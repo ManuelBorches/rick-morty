@@ -23,9 +23,6 @@ const AccordionFilter = ({ title, items, filteredItems, setFilteredItems }) => {
           data-bs-parent={`#accordion-${title}`}
         >
           <div className="accordion-body">
-            {/* {options.map((item) => (
-              <p key={item}>{item}</p>
-            ))} */}
             <ButtonFilter
               items={items}
               filteredItems={filteredItems}
