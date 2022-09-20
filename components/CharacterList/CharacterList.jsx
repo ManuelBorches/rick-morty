@@ -48,30 +48,11 @@ const CharacterList = () => {
         <p className="d-flex justify-content-center">No characters found</p>
       )}
 
-      <div className="row fixedBottom">
-        <div className="col">
+      <div className="row">
+        <div className="col position-fixed bottom-0">
           <Pagination totalPages={totalPages} />
-          <div className="shadowJSX" />
         </div>
       </div>
-
-      <style jsx>{`
-        .shadowJSX {
-          height: 50px;
-          position: fixed;
-          width: 100%;
-          bottom: 0;
-          left: 0;
-          background: linear-gradient(#ffffff10, #ffffff);
-          box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
-          z-index: -1;
-        }
-
-        .fixedBottom {
-          position: fixed;
-          bottom: -2.5rem;
-        }
-      `}</style>
     </div>
   );
 };

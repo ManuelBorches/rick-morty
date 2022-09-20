@@ -21,7 +21,7 @@ const Pagination = ({ totalPages }) => {
 
   return (
     <ReactPaginate
-      className="pagination justify-content-center my-5"
+      className="pagination"
       pageCount={totalPages && totalPages}
       nextLabel="next"
       previousLabel="prev"
@@ -32,7 +32,7 @@ const Pagination = ({ totalPages }) => {
       activeClassName="active"
       forcePage={page - 1}
       onPageChange={handlePageChange}
-      marginPagesDisplayed={width < 576 ? 1 : 2}
+      marginPagesDisplayed={width < 576 ? 2 : 4}
       pageRangeDisplayed={width < 576 ? 1 : 2}
     />
   );
