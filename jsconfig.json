@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": [
+                "components/*"
+            ],
+            "@src/*": [
+                "src/*"
+            ],
+            "@api/*": [
+                "api/*"
+            ],
+            "@styles/*": [
+                "styles/*"
+            ]
+        },
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

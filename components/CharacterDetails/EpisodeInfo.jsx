@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAPIEpisode } from "../../api/episode/fetchAPIEpisode";
+import { fetchAPIEpisode } from "@api/episode/fetchAPIEpisode";
 
 const EpisodeInfo = ({ currentEpisodeId }) => {
   const [episodeInfo, setEpisodeInfo] = useState({});

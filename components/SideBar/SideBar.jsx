@@ -2,15 +2,15 @@ import { useSelector } from "react-redux";
 import {
   setStatusFilter,
   setGenderFilter,
-} from "../../src/features/filters/filterSlice";
-import SearchBar from "./SearchBar";
+} from "@src/features/filters/filterSlice";
+import SearchInput from "./SearchInput";
 import AccordionFilter from "./AccordionFilter";
 
 const SideBar = () => {
   const { statusFilter, genderFilter } = useSelector((state) => state.filters);
   return (
     <div className="bg-light rounded p-3 shadow">
-      <SearchBar />
+      <SearchInput />
 
       <AccordionFilter
         title="status"

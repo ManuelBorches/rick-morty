@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { useSelector, useDispatch } from "react-redux";
-import { setPage } from "../../src/features/characters/characterSlice";
+import { setPage } from "@src/features/characters/characterSlice";
 
 const Pagination = ({ totalPages }) => {
   const [width, setWidth] = useState();

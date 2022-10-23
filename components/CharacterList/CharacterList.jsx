@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCharacters } from "../../src/features/characters/characterSlice";
+import { setCharacters } from "@src/features/characters/characterSlice";
 import Pagination from "./Pagination";
 import CharacterCard from "./CharacterCard";
-import { fetchAPICharacters } from "../../api/character/fetchAPICharacters";
+import { fetchAPICharacters } from "@api/character/fetchAPICharacters";
+import styles from "@styles/CharacterList.module.css";
 
 const CharacterList = () => {
   const [totalPages, setTotalPages] = useState(1);
@@ -34,11 +35,11 @@ const CharacterList = () => {
   return (
     <div className="container">
       {characters.length ? (
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           {characters.map((character) => (
             <div
               key={character.id}
-              className="col-lg-4 col-md-6 col-sm-12 mb-4"
+              className={`col-lg-4 col-md-6 col-sm-12 mb-4 ${styles.characterCard}`}
             >
               <CharacterCard character={character} />
             </div>

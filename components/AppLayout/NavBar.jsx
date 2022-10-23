@@ -6,7 +6,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import logo from "../../public/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsMenuVisible } from "../../src/features/menu/menuSlice";
+import { setIsMenuVisible } from "@src/features/menu/menuSlice";
 
 const NavBar = () => {
   const { pathname } = useRouter();
@@ -43,6 +43,7 @@ const NavBar = () => {
                 alt="rick and morty logo"
                 width={250}
                 height={90}
+                onClick={() => console.log("img clicked")}
               />
             </a>
           </Link>

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setIsMenuVisible } from "../src/features/menu/menuSlice";
-import CharacterList from "../components/CharacterList/CharacterList";
-import ScrollTopButton from "../components/ScrollTopButton";
-import SideBar from "../components/SideBar/SideBar";
-import { setSingleCharacter } from "../src/features/characters/characterSlice";
+import { setIsMenuVisible } from "@src/features/menu/menuSlice";
+import { setSingleCharacter } from "@src/features/characters/characterSlice";
+import CharacterList from "@components/CharacterList/CharacterList";
+import ScrollTopButton from "@components/ScrollTopButton";
+import SideBar from "@components/SideBar/SideBar";
+import styles from "styles/Home.module.css";
 
 const Home = () => {
   const isMenuVisible = useSelector((state) => state.menu.isMenuVisible);
@@ -21,9 +22,13 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className="container position-relative">
+    <div className="container position-relative mt-4 mb-5">
       <div className="row">
-        <div className={`col-md-4 menu ${!isMenuVisible ? "d-none" : ""}`}>
+        <div
+          className={`col-md-4 ${styles.menu} ${
+            !isMenuVisible ? "d-none" : ""
+          }`}
+        >
           <SideBar />
         </div>
 
@@ -33,18 +38,6 @@ const Home = () => {
       </div>
 
       <ScrollTopButton />
-
-      <style jsx>{`
-        @media screen and (max-width: 767px) {
-          .menu {
-            position: fixed;
-            width: 80%;
-            z-index: 5;
-            left: -0.1rem;
-            top: 6rem;
-          }
-        }
-      `}</style>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setPage } from "../../src/features/characters/characterSlice";
+import { setPage } from "@src/features/characters/characterSlice";
 
 const ButtonFilter = ({ items, filteredItems, setFilteredItems }) => {
   const dispatch = useDispatch();

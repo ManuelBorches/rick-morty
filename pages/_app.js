@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import { store } from "../src/app/store";
+import { store } from "@src/app/store";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
-import AppLayout from "../components/AppLayout/AppLayout";
+import AppLayout from "@components/AppLayout/AppLayout";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
