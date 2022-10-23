@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { debounce } from "lodash";
 import { setNameFilter } from "@src/features/filters/filterSlice";
@@ -6,12 +6,10 @@ import { setPage } from "@src/features/characters/characterSlice";
 
 const SearchInput = () => {
   const [error, setError] = useState(false);
-  const [name, setName] = useState("");
   const nameFilter = useSelector((state) => state.filters.nameFilter);
+  const [name, setName] = useState(nameFilter);
   const page = useSelector((state) => state.characters.page);
   const dispatch = useDispatch();
-
-  useEffect(() => setName(nameFilter), [setName, nameFilter]);
 
   const handleChange = (event) => {
     const { value } = event.target;

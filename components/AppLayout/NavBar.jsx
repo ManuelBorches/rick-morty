@@ -43,7 +43,6 @@ const NavBar = () => {
                 alt="rick and morty logo"
                 width={250}
                 height={90}
-                onClick={() => console.log("img clicked")}
               />
             </a>
           </Link>
