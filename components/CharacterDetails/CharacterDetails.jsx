@@ -7,7 +7,7 @@ const CharacterDetails = () => {
 
   return (
     name && (
-      <div className="container mb-5">
+      <div className="container my-5">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 text-align-center">
             <Image src={image} alt={name} width={400} height={400} />

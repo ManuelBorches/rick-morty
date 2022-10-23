@@ -6,8 +6,9 @@ import { setPage } from "@src/features/characters/characterSlice";
 
 const SearchInput = () => {
   const [error, setError] = useState(false);
-  const nameFilter = useSelector((state) => state.filters.nameFilter);
-  const [name, setName] = useState(nameFilter);
+  const [name, setName] = useState(
+    useSelector((state) => state.filters.nameFilter)
+  );
   const page = useSelector((state) => state.characters.page);
   const dispatch = useDispatch();
 
