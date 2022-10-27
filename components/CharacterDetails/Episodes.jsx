@@ -3,16 +3,15 @@ import { useSelector } from "react-redux";
 import EpisodeInfo from "./EpisodeInfo";
 
 const Episodes = () => {
+  const [currentEpisodeId, setCurrentEpisodeId] = useState();
   const { episode: episodes } = useSelector(
     (state) => state.characters.singleCharacter
   );
-  const [currentEpisodeId, setCurrentEpisodeId] = useState();
 
-  if (!episodes) return;
   return (
     <>
       <ul className="nav nav-tabs" id="myTab" role="tablist">
-        {episodes.map((episode, index) => {
+        {episodes?.map((episode, index) => {
           const episodeId = episode.split("/").slice(-1).join();
           const handleClick = () => {
             setCurrentEpisodeId(episodeId);
@@ -36,11 +35,13 @@ const Episodes = () => {
         })}
       </ul>
 
-      <EpisodeInfo
-        currentEpisodeId={
-          currentEpisodeId || episodes[0].split("/").slice(-1).join()
-        }
-      />
+      {episodes && (
+        <EpisodeInfo
+          currentEpisodeId={
+            currentEpisodeId || episodes[0].split("/").slice(-1).join()
+          }
+        />
+      )}
     </>
   );
 };

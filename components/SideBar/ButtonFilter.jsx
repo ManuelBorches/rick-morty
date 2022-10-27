@@ -9,16 +9,13 @@ const ButtonFilter = ({ items, filteredItems, setFilteredItems }) => {
   return items.map((item) => {
     const handleFilter = () => {
       page !== 1 && dispatch(setPage(1));
-
-      if (filteredItems.includes(item)) {
-        dispatch(
+      if (filteredItems.includes(item))
+        return dispatch(
           setFilteredItems(
             filteredItems.filter((filteredItem) => filteredItem !== item)
           )
         );
-      } else {
-        dispatch(setFilteredItems([...filteredItems, item]));
-      }
+      return dispatch(setFilteredItems([...filteredItems, item]));
     };
     return (
       <button

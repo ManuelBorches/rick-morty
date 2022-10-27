@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsMenuVisible } from "@src/features/menu/menuSlice";
 
 const NavBar = () => {
-  const { pathname } = useRouter();
   const isMenuVisible = useSelector((state) => state.menu.isMenuVisible);
+  const { pathname } = useRouter();
   const dispatch = useDispatch();
 
   const toggleMenu = () => dispatch(setIsMenuVisible(!isMenuVisible));

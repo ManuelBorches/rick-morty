@@ -13,13 +13,10 @@ The UI is using Bootstrap for styling.
 
 Go to the project folder and install dependencies:
 
-```bash
-npm install
+Checkout the code base and then type:
+
 ```
-
-Run the development server:
-
-```bash
+npm install
 npm run dev
 ```
 
